@@ -7,7 +7,7 @@ pipeline
 				{
 				steps
 					{
-					git ""
+					git "https://github.com/Challavenkateswarlu/maven.git"
 					}
 				}
 			stage("Run")
