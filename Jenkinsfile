@@ -15,8 +15,21 @@ pipeline {
    {
     sh "mvn clean"
     sh "mvn install"
-    sh "bash shell.sh"
    }
   }
+  stage("build")
+  {
+      steps
+      {
+          git branch: 'feature', url: 'https://github.com/Challavenkateswarlu/maven.git'
+          sh "bash shell.sh"
+   }
+   stage("jenkins")
+  {
+      steps
+      {
+          git branch: 'feature1', url: 'https://github.com/Challavenkateswarlu/maven.git'
+   }
+}
  }
 }
